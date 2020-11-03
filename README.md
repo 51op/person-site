@@ -18,3 +18,12 @@ npm run serve
 npm run buildx
 ```
 
+### Production environment deployment (nginx)
+[详见](!https://router.vuejs.org/zh/guide/essentials/history-mode.html)
+```
+
+location / {
+  try_files $uri $uri/ /index.html;
+}
+```
+
