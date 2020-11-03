@@ -111,11 +111,11 @@
 }
 .foot_navi{
     display: flex;
+    margin: 0 500px;
 
 }
 .footer-booter-1{
-    /*padding: 30px 10px ;*/
-    padding: 30px 100px;
+    padding: 30px 10px;
 
 }
     .foot_navi a {
@@ -128,14 +128,15 @@
 
 
 .foot_copy{
-        color: seashell;
+        color: #666;
         font-size: 14px;
-        line-height: 45px;
+        line-height: 15px;
         text-align: center;
+    padding:0 0 20px 0;
     }
 
 .foot_copy .foot_copy-1 a {
         text-decoration: none;
-        color: seashell;
+        color: #666;
     }
 </style>

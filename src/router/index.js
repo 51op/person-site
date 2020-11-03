@@ -7,7 +7,15 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/tiku',
+    name: 'Tiku',
+    component: Tiku,
+    meta: {
+      title: '题库'
+    }
+  },
+  {
+    path: '*',
     name: 'Index',
     component: Index,
     meta: {
@@ -16,13 +24,13 @@ const routes = [
     }
   },
   {
-    path: '/tiku',
-    name: 'Tiku',
-    component: Tiku,
-    meta: {
-      title: '题库'
+    path: '/details/:id',
+    component: () => import("@/views/details/InterSumm"),
+    name: 'details',
+    meta:{
+      title: "题库"
     }
-  }
+  },
 ]
 
 const router = new VueRouter({

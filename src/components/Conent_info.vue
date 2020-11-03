@@ -4,46 +4,15 @@
         <div class="article">
             <h2>最新文章|</h2>
         </div>
-        <div class="article-content">
+        <div class="article-content" v-for="item in  list":key="list.id">
             <div class="article-content-1">
                 <div class="article-content-left" >
-                    <img src="../assets/img/k8s_gaitubao_262x167.jpg"></img>
+                    <img :src=item.img></img>
                 </div>
                 <div class="article-content-right">
-                    <div class="article-title"><a href="###">k8s证书升级</a></div>
-                    <div class="article-content-info"><p>由 kubeadm 生成的客户端证书在 1 年后到期</p></div>
-                    <div class="article-tag"><span>k8s</span></div>
-                </div>
-            </div>
-            <div class="article-content-1">
-                <div class="article-content-left" >
-                    <img src="../assets/img/docker_gaitubao_267x127.png"></img>
-                </div>
-                <div class="article-content-right">
-                    <div class="article-title"><a href="###">5款非常好用的 Docker 工具</a></div>
-                    <div class="article-content-info"><p>Docker 社区已经创建了许多开源工具，它们能帮我们处理各种用例。作者在本文中推荐了 5 款认为最有用的 Docker 工具，分别是 Watchtower（自动更新 Docker 容器）、docker-gc（容器和镜像的垃圾回收）、docker-slim（容器瘦身）、 rocker：突破 Dockerfile 的限制，以及 ctop（容器的类顶层接口）</p></div>
-                    <div class="article-tag"><span>docker</span></div>
-                </div>
-            </div>
-            <div class="article-content-1">
-                <div class="article-content-left" >
-                    <img src="../assets/img/python.png"></img>
-                </div>
-                <div class="article-content-right">
-                    <div class="article-title"><a href="###">python 生成器和迭代器</a></div>
-                    <div class="article-content-info"><p>python中生成器和迭代器最常用</p></div>
-                    <div class="article-tag"><span>python</span></div>
-                </div>
-            </div>
-
-            <div class="article-content-1">
-                <div class="article-content-left" >
-                    <img src="../assets/img/python.png"></img>
-                </div>
-                <div class="article-content-right">
-                    <div class="article-title"><a href="###">Python中yield用法</a></div>
-                    <div class="article-content-info"><p>首先我要吐槽一下，看程序的过程中遇见了yield这个关键字，然后百度的时候，发现没有一个能简单的让我懂的，讲起来真TM的都是头头是道，什么参数，什么传递的，还口口声声说自己的教程是最简单的，最浅显易懂的，我就想问没有有考虑过读者的感受</p></div>
-                    <div class="article-tag"><span>python</span></div>
+                    <div class="article-title"><a href="###">{{ item.title }}</a></div>
+                    <div class="article-content-info"><p>{{ item.info }}</p></div>
+                    <div class="article-tag"><span><el-tag>{{item.tag}}</el-tag></span></div>
                 </div>
             </div>
         </div>
@@ -53,6 +22,40 @@
 <script>
     export default {
         name:'Conent_info',
+        data(){
+            return{
+                list:[
+                    {
+                        id:"1",
+                        img:require("../assets/img/k8s_gaitubao_262x167.jpg"),
+                        title:"k8s证书升级",
+                        info:"由 kubeadm 生成的客户端证书在 1 年后到期,证书升级有两种方法。",
+                        tag:"k8s"
+                    },
+                    {
+                        id:"2",
+                        img:require("../assets/img/docker_gaitubao_267x127.png"),
+                        title:"5款非常好用的 Docker 工具",
+                        info:"Docker 社区已经创建了许多开源工具，它们能帮我们处理各种用例。作者在本文中推荐了 5 款认为最有用的 Docker 工具，分别是 Watchtower（自动更新 Docker 容器）、docker-gc（容器和镜像的垃圾回收）、docker-slim（容器瘦身）、 rocker：突破 Dockerfile 的限制，以及 ctop（容器的类顶层接口）。",
+                        tag:"docker"
+                    },
+                    {
+                        id:"3",
+                        img:require("../assets/img/python.png"),
+                        title:"python 生成器和迭代器",
+                        info:"python中生成器和迭代器最常用",
+                        tag:"python"
+                    },
+                    {
+                        id:"4",
+                        img:require("../assets/img/python.png"),
+                        title:"Python中yield用法",
+                        info:"首先我要吐槽一下，看程序的过程中遇见了yield这个关键字，然后百度的时候，发现没有一个能简单的让我懂的，讲起来真TM的都是头头是道，什么参数，什么传递的，还口口声声说自己的教程是最简单的，最浅显易懂的，我就想问没有有考虑过读者的感受",
+                        tag:"python"
+                    },
+                ]
+            }
+        }
     }
 
 </script>
@@ -95,9 +98,10 @@
         margin: 10px;
     }
     .article-content-right .article-tag{
-        padding: 2px;
+        padding: 10px;
         font-size: 14px;
         color: #999;
+        font-weight: bold;
     }
     .article{
         background-color:#f6f6f6;

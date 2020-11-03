@@ -14,19 +14,12 @@
 
     <div class="content-zongjie">运维面试总结</div>
     <div class="content-list">
-        <div class="tiku-content">
-            <div class="tiku-content-img"><img src="../assets/img/Linux-250x165.png"></div>
+        <div class="tiku-content" v-for="item in list" :key="item.id">
+            <div class="tiku-content-img"><img :src="item.img"></div>
             <div class="tiku-contend-zhaiyao">
-                <div class="tiku-contend-tile"><a href="###">汇总当下20k以上运维面试总结</a></div>
-                <div class="tiku-contend-content"><p>1、tcp和udp的区别? 2、tcp三次握手四次挥手? 3、https传输是怎么是安全的？4、Kubernetes创建一个Pod的主要流程？</p></div>
-            </div>
-        </div>
-
-        <div class="tiku-content">
-            <div class="tiku-content-img"><img src="../assets/img/data.png"></div>
-            <div class="tiku-contend-zhaiyao">
-                <div class="tiku-contend-tile"><a href="###">大数据运维面试汇总</a></div>
-                <div class="tiku-contend-content"><p>1、redis集群是如何分片的? 2、RabbitMq怎么数据被自消费? 3、redis集群模式有哪几种？4、elastisearch分片、副本如何规划？</p></div>
+<!--                <div class="tiku-contend-tile"><router-link tag="a" :to="'/details/'+item.id">{{item.title}}</router-link></div>-->
+                <div class="tiku-contend-tile"><router-link tag="a" :to="{ name: 'details', params: { id: item.id }}">{{item.title}}</router-link></div>
+                <div class="tiku-contend-content"><p>{{item.content}}</p></div>
             </div>
         </div>
     </div>
@@ -43,7 +36,23 @@
 export default {
     name:'Tiku',
     data(){
-        return
+        return {
+
+            list: [
+                {
+                    id: "123",
+                    title: '汇总当下20k以上运维面试总结',
+                    content:'1、tcp和udp的区别? 2、tcp三次握手四次挥手? 3、https传输是怎么是安全的？4、Kubernetes创建一个Pod的主要流程？',
+                    img: require('../assets/img/Linux-250x165.png')
+                },
+                {
+                    id: 1234,
+                    title: '大数据运维面试汇总',
+                    content:'1、redis集群是如何分片的? 2、RabbitMq怎么数据被自消费? 3、redis集群模式有哪几种？4、elastisearch分片、副本如何规划？',
+                    img: require('../assets/img/data.png')
+                },
+            ]
+        }
     },
     components:{
         Title,
