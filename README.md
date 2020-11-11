@@ -13,11 +13,6 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run buildx
-```
-
 ### Production environment deployment (nginx)
 [详见](!https://router.vuejs.org/zh/guide/essentials/history-mode.html)
 ```
@@ -26,4 +21,8 @@ location / {
   try_files $uri $uri/ /index.html;
 }
 ```
+
+### Examle
+
+![avatar](!https://gitee.com/stto_32/img/raw/master/u=3564574551,3491080156&fm=26&gp=0.jpg)
 
