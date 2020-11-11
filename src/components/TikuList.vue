@@ -17,8 +17,8 @@
         <div class="tiku-content" v-for="item in list" :key="item.id">
             <div class="tiku-content-img"><img :src="item.img"></div>
             <div class="tiku-contend-zhaiyao">
-<!--                <div class="tiku-contend-tile"><router-link tag="a" :to="'/details/'+item.id">{{item.title}}</router-link></div>-->
-                <div class="tiku-contend-tile"><router-link tag="a" :to="{ name: 'details', params: { id: item.id }}">{{item.title}}</router-link></div>
+                <div class="tiku-contend-tile"><router-link tag="a" :to="{name:'details'}">{{item.title}}</router-link></div>
+<!--                <div class="tiku-contend-tile"><router-link tag="a" :to="{ name: 'details', params: { id: item.id }}">{{item.title}}</router-link></div>-->
                 <div class="tiku-contend-content"><p>{{item.content}}</p></div>
             </div>
         </div>
@@ -34,7 +34,7 @@
     import Title from './Title'
     import Footer_contend from  './Footer_contend'
 export default {
-    name:'Tiku',
+    name:'TikuList',
     data(){
         return {
 

@@ -48,9 +48,25 @@
                 <p>其实缓存是在释放的，只不过是没有那么快，释放的快慢取决于redis.conf中的hz参数默认为10，意思是每秒执行10次删除过期key。所以在redis过期较多的场景可以适当调大。并观察cpu是否升高， 提高它的值将会占用更多的cpu，固然相应的redis将会更快的处理同时到期的许多key，和更精确的去处理超时 在命令行执行：config set hz 50
                 </p>
 
+            <h1>6、python 用一行实现对一个列表中元素做平方操作</h1>
+            <code >
+                <li style="background-color:#f4f4f4;margin: 15px 30px;font-size: 16px">列表生成式 : newlist =  [a*a for a in list] </li>
+                 <li style="background-color:#f4f4f4;margin: 15px 30px;font-size: 16px">
+                     map 函数:<br>
+                     newlist = map(lambda a:a*a,list)<br>
+                     A1 = [1,2,3,4,5,6]<br>
+                     print(list(map(lambda x:x*2,A1)))<br>
+                     print([a*2 for a in A1])<br>
+                 </li>
 
-        </div>
-        
+            </code>
+            <el-divider></el-divider>
+
+
+    </div>
+    <Share></Share>
+    <el-divider></el-divider>
+
 
 
         <Footer_contend></Footer_contend>
@@ -61,15 +77,18 @@
 <script>
 import Ttile from  '../../components/Title';
 import Footer_contend from '../../components/Footer_contend';
-
+import Share from '../../components/Share'
 export  default {
         name:'art01',
         components:{
                 Ttile,
-                Footer_contend
+                Footer_contend,
+                Share
         },
         data(){
            return{
+               value2:null,
+               colors:['#99A9BF', '#F7BA2A', '#FF9900'],
                RedisData:[
                    {
                        rdb:'RDB很适用于灾难恢复，它只有一个文件',
@@ -123,6 +142,9 @@ export  default {
 </script>
 <style scoped>
 
+.share{
+    margin: 40px 400px 100px;
+}
 
     .art-1{
         background-color: #f6f6f6;
