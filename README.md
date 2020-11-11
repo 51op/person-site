@@ -25,4 +25,6 @@ location / {
 ### Examle
 
 ![avatar](!https://gitee.com/stto_32/img/raw/master/u=3564574551,3491080156&fm=26&gp=0.jpg)
+![输入图片说明](https://images.gitee.com/uploads/images/2020/1021/120805_ef115a9c_145025.png "屏幕截图.png")
+
 
