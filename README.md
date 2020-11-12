@@ -26,6 +26,4 @@ location / {
 
 
 
-![](https://gitee.com/stto_32/img/blob/master/20201112143339.jpg)
 
-[51运维com](http://xuliliang.com)
