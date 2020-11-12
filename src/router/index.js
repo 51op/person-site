@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Index from "../components/Index";
 import TikuList from "../components/TikuList";
 import test from "../components/test/Test"
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -31,7 +32,7 @@ const routes = [
   {
     path: '/index',
     name: 'Index',
-    component:Index,
+    component:() => import("@/components/Index"),
     meta: {
       title: '首页',
 
@@ -40,11 +41,20 @@ const routes = [
   {
     path: '/details/sum',
     component: () => import("@/views/details/InterSumm"),
-    name: 'details',
+    name: 'InterSumm',
     meta:{
-      title: "题库"
+      title: "面试总结"
     }
-  }
+  },
+  {
+    path: '/details/k8supdate',
+    component: () => import("@/views/details/K8sUpdate"),
+    name: 'k8supdate',
+    meta:{
+      title: "k8s升级"
+    }
+  },
+
 
 ]
 

@@ -67,6 +67,10 @@ export default {
         text-decoration: none;
         border-radius: 34px;
     }
+    .share{
+        margin: 40px 400px 100px;
+
+    }
 
     a:hover{
         background-color: #8c939d;

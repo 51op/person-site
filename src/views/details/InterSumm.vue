@@ -1,13 +1,9 @@
 <template>
 <div class="art-1">
         <Ttile></Ttile>
-
-        <div class="detail-info">
-                <img src="../../assets/img/title.png">
-                <div class="tiku-shouye"><a href="/">首页 &nbsp;&nbsp;&nbsp;&nbsp;></a></div>
-                <div class="tiku-mianshi">汇总当下20k以上运维面试总结&nbsp;&nbsp;&nbsp;&nbsp;></div>
-        </div>
-
+        <zhaiyao>
+            <div slot="contentSlot">汇总当下20k以上运维面试总结&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </zhaiyao>
 
 
         <div class="content">
@@ -64,26 +60,25 @@
 
 
     </div>
-    <Share></Share>
-    <el-divider></el-divider>
-
-
-
+        <Share></Share>
+        <el-divider></el-divider>
         <Footer_contend></Footer_contend>
 
 </div>
 </template>
 
 <script>
-import Ttile from  '../../components/Title';
-import Footer_contend from '../../components/Footer_contend';
+import Ttile from  '../../components/Title'
+import Footer_contend from '../../components/Footer_contend'
 import Share from '../../components/Share'
+import  Zhaiyao from '../../components/Zhaiyao'
 export  default {
         name:'art01',
         components:{
                 Ttile,
                 Footer_contend,
-                Share
+                Share,
+                Zhaiyao,
         },
         data(){
            return{
@@ -142,9 +137,6 @@ export  default {
 </script>
 <style scoped>
 
-.share{
-    margin: 40px 400px 100px;
-}
 
     .art-1{
         background-color: #f6f6f6;
@@ -164,22 +156,22 @@ export  default {
         font-weight: bold;
         line-height: 45px;
 }
-        .tiku-shouye a {
-                text-decoration: none;
-                display: block;
-                color: #171c21;
-                padding-right: 10px;
-        }
-        .detail-info {
-                display: flex;
-                font-size: 16px;
-                width: auto;
-                color: #333;
-                margin: 20px 30px ;
-                padding: 8px;
+        /*.tiku-shouye a {*/
+        /*        text-decoration: none;*/
+        /*        display: block;*/
+        /*        color: #171c21;*/
+        /*        padding-right: 10px;*/
+        /*}*/
+        /*.detail-info {*/
+        /*        display: flex;*/
+        /*        font-size: 16px;*/
+        /*        width: auto;*/
+        /*        color: #333;*/
+        /*        margin: 20px 30px ;*/
+        /*        padding: 8px;*/
 
-        }
-        .tiku-icon img{
-                padding: 0 10px 0 25px;
-        }
+        /*}*/
+        /*.tiku-icon img{*/
+        /*        padding: 0 10px 0 25px;*/
+        /*}*/
 </style>
