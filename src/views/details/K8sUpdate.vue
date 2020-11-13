@@ -12,7 +12,7 @@
 
         <div class="content">
 
-        <h1>由 kubeadm 生成的客户端证书在 1 年后到期</h1>
+        <p>用kubeadm部署的k8s集群，生成的证书默认只有一年有效期，需要每年都要升级</p>
 
 
           <h1> 使用自定义的证书</h1>
@@ -32,7 +32,7 @@
 
             <h1>检查证书是否过期</h1>
             <code>kubeadm alpha certs check-expiration</code>
-            <img src="https://gitee.com/stto_32/img/raw/master/20201112152716.png" style="width: 580px;height;margin: 30px 30px"/>
+            <img src="https://gitee.com/stto_32/img/raw/master/20201113100322.png" style="width: 580px;margin: 30px 30px"/>
             <p>该命令显示 /etc/kubernetes/pki 文件夹中的客户端证书以及 kubeadm 使用的 KUBECONFIG 文件中嵌入的客户端证书的到期时间/剩余时间</p>
             <h1>自动更新证书</h1>
             <p>kubeadm在升级的时候会自动升级证书，kubeadm升级见https://kubernetes.io/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/</p>
@@ -87,15 +87,6 @@
         color: #171c21;
         padding-right: 10px;
     }
-    .detail-info {
-        display: flex;
-        font-size: 16px;
-        width: auto;
-        color: #333;
-        margin: 20px 30px ;
-        padding: 8px;
-
-    }
 .k8supdate{
     background-color: #f6f6f6;
     color: #171C21;
@@ -107,6 +98,11 @@
 
     .content p {
         margin: 8px 30px;
+        line-height: 1.8;
+        padding: 0px 0 0 0;
+        word-break: break-all;
+        font-size: 16px;
+        letter-spacing: 0;
     }
     .content h1 {
         margin: 20px 30px;
@@ -114,6 +110,11 @@
         font-size: 20px;
         font-weight: bold;
         line-height: 45px;
+    }
+    code{
+        margin: 8px 40px;
+        background-color: #302327;
+        color: #FFFFFF;
     }
 
 </style>

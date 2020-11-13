@@ -54,6 +54,14 @@ const routes = [
       title: "k8s升级"
     }
   },
+  {
+    path: '/details/dockertools',
+    component: () => import("@/views/details/DockerTools"),
+    name: 'DockerTools',
+    meta:{
+      title: "docker工具"
+    }
+  },
 
 
 ]

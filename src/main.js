@@ -8,6 +8,12 @@ import  ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 
+//引入bootstrap组件
+import { BootstrapVue } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+Vue.use(BootstrapVue)
+
+
 Vue.config.productionTip = false
 
 

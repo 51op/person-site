@@ -8,7 +8,10 @@
 
         <div class="content">
 
-                <h1>1、tcp和udp的区别</h1>
+            <h1 style="margin: 20px 30px;font-size: 30px;color: #42b983">汇总当下20k以上运维面试总结</h1>
+            <p>现在网上搜到关于运维的面试题都是前几年的，分享一下亲身经历的现在运维面试问到的问题</p>
+            <p>现在运维划分的比较细，大概分这么几类：系统运维、应用运维、大数据运维、安全运维、网络运维、DBA运维、k8s运维、开发运维</p>
+            <h1>1、tcp和udp的区别</h1>
 
             <el-table :data="TcpData"  border style="width: 920px;margin: 20px 30px;">
                 <el-table-column prop="tcp" label="TCP" width="420"></el-table-column>
@@ -45,7 +48,7 @@
                 </p>
 
             <h1>6、python 用一行实现对一个列表中元素做平方操作</h1>
-            <code >
+            <code>
                 <li style="background-color:#f4f4f4;margin: 15px 30px;font-size: 16px">列表生成式 : newlist =  [a*a for a in list] </li>
                  <li style="background-color:#f4f4f4;margin: 15px 30px;font-size: 16px">
                      map 函数:<br>
@@ -148,6 +151,11 @@ export  default {
     }
     .content p {
         margin: 8px 30px;
+        line-height: 1.8;
+        padding: 0px 0 0 0;
+        word-break: break-all;
+        font-size: 16px;
+        letter-spacing: 0;
     }
     .content h1{
         margin: 20px 30px;
@@ -156,22 +164,5 @@ export  default {
         font-weight: bold;
         line-height: 45px;
 }
-        /*.tiku-shouye a {*/
-        /*        text-decoration: none;*/
-        /*        display: block;*/
-        /*        color: #171c21;*/
-        /*        padding-right: 10px;*/
-        /*}*/
-        /*.detail-info {*/
-        /*        display: flex;*/
-        /*        font-size: 16px;*/
-        /*        width: auto;*/
-        /*        color: #333;*/
-        /*        margin: 20px 30px ;*/
-        /*        padding: 8px;*/
 
-        /*}*/
-        /*.tiku-icon img{*/
-        /*        padding: 0 10px 0 25px;*/
-        /*}*/
 </style>

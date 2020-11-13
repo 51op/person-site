@@ -37,6 +37,7 @@
                         id: 2,
                         img: require("../assets/img/docker_gaitubao_267x127.png"),
                         title: "5款非常好用的 Docker 工具",
+                        path:"dockertools",
                         info: "Docker 社区已经创建了许多开源工具，它们能帮我们处理各种用例。作者在本文中推荐了 5 款认为最有用的 Docker 工具，分别是 Watchtower（自动更新 Docker 容器）、docker-gc（容器和镜像的垃圾回收）、docker-slim（容器瘦身）、 rocker：突破 Dockerfile 的限制，以及 ctop（容器的类顶层接口）。",
                         tag: "docker"
                     },
@@ -74,7 +75,7 @@
         methods: {
             //数组对象方法排序:
             sortByKey(array, key) {
-                return array.sort(function (b, a) {
+                return array.sort(function (a, b) {
                     var x = a[key];
                     var y = b[key];
                     return ((x < y) ? -1 : ((x > y) ? 1 : 0));
@@ -145,6 +146,7 @@
         color: #38485a;
         line-height: 40px;
         border-bottom: 2px solid #209E80;
+        margin: 10px 30px;
     }
 
 </style>

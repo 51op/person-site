@@ -120,7 +120,7 @@ export default {
         color: #747f8c;
         padding: 10px;
         line-height: 24px;
-        height: 48px;
+        height: 60px;
         overflow: hidden;
     }
 </style>
