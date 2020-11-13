@@ -14,6 +14,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 Vue.use(BootstrapVue)
 
 
+//引入高亮组件
+// import Prism from 'prismjs';
+// Vue.use(Prism)
+//
+// highlight.js代码高亮插件
+import Highlight from './highlight'; // 这里是你项目highlight.js所在路径
+Vue.use(Highlight);
+
 Vue.config.productionTip = false
 
 
@@ -24,6 +32,7 @@ router.beforeEach((to, from, next) => {
   }
   next()
 })
+
 
 new Vue({
   router,

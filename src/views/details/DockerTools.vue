@@ -152,7 +152,7 @@
     }
 
     .content p {
-        margin: 8px 30px;
+        margin: 8px 60px;
         line-height: 1.8;
         padding: 0px 0 0 0;
         word-break: break-all;
