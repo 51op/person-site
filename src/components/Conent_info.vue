@@ -59,6 +59,7 @@
                         id: 5,
                         img: require("../assets/img/k8s_gaitubao_262x167.jpg"),
                         title: "kubernets 升级由v1.16.4-v1.17.4版本",
+                        path:'K8sVersionUpdate',
                         info: "kubernets 升级由v1.16.4-v1.17.4版本,3个节点",
                         tag: "k8s"
                     },
