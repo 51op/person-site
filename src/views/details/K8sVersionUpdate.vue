@@ -40,7 +40,9 @@
                 done
                 [root@master01 ~]# sh image-1.17.4.sh
             </code></pre>
+            <p><img src="https://gitee.com/stto_32/img/raw/master/20201113181803.png" style="width: 800px;height: 200px "/></p>
 
+            <h1>升级 master01 节点</h1>
 
         </div>
         <Share></Share>
@@ -104,7 +106,7 @@
     }
 
     .content p {
-        margin: 8px 60px;
+        margin: 8px 30px;
         line-height: 1.8;
         padding: 0px 0 0 0;
         word-break: break-all;
