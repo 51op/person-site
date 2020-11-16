@@ -8,7 +8,7 @@
 
 
         <div class="content">
-        <h1 style="margin: 20px 30px;font-size: 30px;color: #42b983">kubernets 升级由v1.16.4-v1.17.4版本</h1>
+        <h1>kubernets 升级由v1.16.4-v1.17.4版本</h1>
         <p>此次升级是kubernets由v1.16.4-v1.17.4版本，特别注意尽量<span style="color: red;font-weight: bold">不要跨版本升级</span> <a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/">参见官方文档</a></p>
 
         <h1> 提前准备</h1>
@@ -135,7 +135,7 @@ _____________________________________________________________________
             <h1>升级node01节点</h1>
             <p>1、上安装kubeadm（node02节点）</p>
             <pre v-highlight><code>yum install -y kubeadm-1.17.4-0 --disableexcludes=kubernetes</code></pre>
-            <img src="../../assets/img/kube04.png" />
+            <img src="@/assets/img/kube04.png"/>
             <p>2、执行 train node01（在master01上操作）</p>
             <pre><code>kubectl drain node01 --ignore-daemonsets</code></pre>
             <img src="../../assets/img/kube05.png" style="width: 920px"/>
@@ -211,6 +211,7 @@ _____________________________________________________________________
     .content{
         width: 960px;
         background-color:#fff;
+        margin: auto 70px;
     }
 
     .content p {
@@ -221,6 +222,7 @@ _____________________________________________________________________
         font-size: 16px;
         letter-spacing: 0;
     }
+
     li{
         margin: 8px 30px;
     }
@@ -233,7 +235,6 @@ _____________________________________________________________________
     }
     code{
         margin: 8px 40px;
-        background-color: #f4f4f4;
     }
     img{
         margin: 4px 30px;

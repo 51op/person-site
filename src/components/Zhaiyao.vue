@@ -23,7 +23,7 @@
         font-size: 14px;
         width: auto;
         color: #333;
-        margin: 20px 30px ;
+        margin: 20px 70px ;
         /*padding: 2px;*/
 
     }

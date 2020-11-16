@@ -8,7 +8,7 @@
 
         <div class="content">
 
-            <h1 style="margin: 20px 30px;font-size: 30px;color: #42b983">汇总当下20k以上运维面试总结</h1>
+            <h1>汇总当下20k以上运维面试总结</h1>
             <p>现在网上搜到关于运维的面试题都是前几年的，分享一下亲身经历的现在运维面试问到的问题</p>
             <p>现在运维划分的比较细，大概分这么几类：系统运维、应用运维、大数据运维、安全运维、网络运维、DBA运维、k8s运维、开发运维</p>
             <h1>1、tcp和udp的区别</h1>
@@ -148,6 +148,7 @@ export  default {
     .content{
         width: 960px;
         background-color:#fff;
+        margin: auto 70px;
     }
     .content p {
         margin: 8px 30px;

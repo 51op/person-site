@@ -11,6 +11,7 @@
 
 
         <div class="content">
+            <h1>k8s证书升级</h1>
 
         <p>用kubeadm部署的k8s集群，生成的证书默认只有一年有效期，需要每年都要升级</p>
 
@@ -94,6 +95,7 @@
     .content{
         width: 960px;
         background-color:#fff;
+        margin: auto 70px;
     }
 
     .content p {

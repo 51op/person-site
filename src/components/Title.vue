@@ -1,11 +1,11 @@
 <template>
     <div class="mem-header">
         <ul>
-            <li><a href="/"><img src="../assets/img/logo.png" style="width: 200px;"></a></li>
+<!--            <li><a href="/"><img src="../assets/img/logo.png" style="width: 200px;"></a></li>-->
+            <li><a href="/"><img src="@/assets/img/logo.png" style="width: 200px;"></a></li>
             <li><a href="/">首页</a></li>
             <li><a href="/tikulist">运维题库</a></li>
             <li><a href="/">运维干货</a></li>
-            <li><a href="/">面试题经</a></li>
             <li><router-link to="/">资讯</router-link></li>
             <li><router-link to="/">搜索</router-link></li>
 

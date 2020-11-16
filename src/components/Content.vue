@@ -6,12 +6,19 @@
                 <p>{{ item.text }}</p>
             </div>
 
+
         </div>
         <div class="weixin_shequ">
             <span>加入社区</span>
             <img :src="imgurl"></img>
         </div>
+
+
+
+
+
     </div>
+
 
 </template>
 <script>
@@ -123,4 +130,7 @@
         display: block;
         font-weight: bold;
     }
+
+
+
 </style>

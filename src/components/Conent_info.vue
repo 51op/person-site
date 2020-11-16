@@ -26,15 +26,15 @@
             return {
                 list: [
                     {
-                        id: 1,
-                        img: require("../assets/img/k8s_gaitubao_262x167.jpg"),
+                        id: 4,
+                        img: require("../assets/img/kubeTitle_gaitubao_271x150.png"),
                         title: "k8s证书升级",
                         path: "k8supdate",
                         info: "由 kubeadm 生成的客户端证书在 1 年后到期,证书升级有两种方法。",
                         tag: "k8s"
                     },
                     {
-                        id: 2,
+                        id: 6,
                         img: require("../assets/img/docker_gaitubao_267x127.png"),
                         title: "5款非常好用的 Docker 工具",
                         path:"dockertools",
@@ -43,15 +43,16 @@
                     },
                     {
                         id: 3,
-                        img: require("../assets/img/python.png"),
+                        img: require("../assets/img/pythonTitle_gaitubao_265x136.png"),
                         title: "python 生成器和迭代器",
                         info: "python中生成器和迭代器最常用",
                         tag: "python"
                     },
                     {
-                        id: 4,
+                        id: 2,
                         img: require("../assets/img/python.png"),
                         title: "Python中yield用法",
+                        path:"pyield",
                         info: "首先我要吐槽一下，看程序的过程中遇见了yield这个关键字，然后百度的时候，发现没有一个能简单的让我懂的，讲起来真TM的都是头头是道，什么参数，什么传递的，还口口声声说自己的教程是最简单的，最浅显易懂的，我就想问没有有考虑过读者的感受",
                         tag: "python"
                     },
@@ -76,7 +77,7 @@
         methods: {
             //数组对象方法排序:
             sortByKey(array, key) {
-                return array.sort(function (a, b) {
+                return array.sort(function (b, a) {
                     var x = a[key];
                     var y = b[key];
                     return ((x < y) ? -1 : ((x > y) ? 1 : 0));

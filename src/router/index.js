@@ -70,7 +70,14 @@ const routes = [
       title: "docker工具"
     }
   },
-
+  {
+    path: '/details/pyield',
+    component: () => import("@/views/details/PythonYield"),
+    name: 'pythonYield',
+    meta:{
+      title: "yield用法"
+    }
+  },
 
 ]
 

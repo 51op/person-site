@@ -16,11 +16,13 @@ module.exports = {
         //     },
         // }
 
-    configureWebpack:config=>{
-        if (process.env.NODE_ENV == 'prod'){
-
-        }else {
-
-        }
+    configureWebpack:{
+      resolve:{
+          alias:{
+              //在html中<img src="@/assets/img/kube04.png"/>
+              assets:path.resolve(__dirname,"assets"),
+              components:path.resolve(__dirname,"components")
+          }
+      }
     },
 }
