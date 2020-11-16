@@ -26,7 +26,7 @@
         name:'Content',
         data(){
             return{
-                'imgurl':require('../assets/img/shequ.jpg'),
+                'imgurl':require('@/assets/img/shequ_gaitubao_378x130.png'),
                 list: [
                     {
                        name:"Java教程",
@@ -114,13 +114,12 @@
         color: #999;
     }
     .weixin_shequ{
-        height: 120px;
-        width:260px;
-        padding:12px;
+        padding:5px;
+        background-color: #fff;
     }
     .weixin_shequ img{
         height: 180px;
-        width: 280px;
+        width: 370px;
     }
     .weixin_shequ span{
         text-align: left;
