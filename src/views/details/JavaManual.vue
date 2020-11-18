@@ -12,7 +12,7 @@
                         <el-aside width="200px">
                             <el-menu >
                                 <el-submenu index="1" >
-                                    <template slot="title"><i class="el-icon-caret-right"></i>基本语法</template>
+                                    <template slot="title"><i class="el-icon-location"></i>基本语法</template>
                                     <el-menu-item-group >
                                         <el-menu-item index="1-1">
                                             <router-link to="/java/notes">注释</router-link>
@@ -44,7 +44,7 @@
                                     </el-menu-item-group>
                                 </el-submenu>
                                 <el-submenu index="2">
-                                    <template slot="title"><i class="el-icon-caret-right"></i>控制语句</template>
+                                    <template slot="title"><i class="el-icon-location"></i>控制语句</template>
                                     <el-menu-item-group>
                                         <el-menu-item index="2-1">
                                             <router-link to="">循环语句</router-link>
@@ -58,30 +58,42 @@
                                     </el-menu-item-group>
                                 </el-submenu>
                                 <el-submenu index="3">
-                                    <template slot="title"><i class="el-icon-caret-right"></i>java面向对象</template>
+                                    <template slot="title"><i class="el-icon-location"></i>java面向对象</template>
                                     <el-menu-item-group>
                                         <el-menu-item index="3-1">
-                                            <router-link to="">循环语句</router-link>
+                                            <router-link to="">类和对象的概念</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="3-2">
-                                            <router-link to="">方法</router-link>
+                                            <router-link to="">类的定义</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="3-3">
-                                            <router-link to="">方法的重载(overload)</router-link>
+                                            <router-link to="">面向对象的内存分析</router-link>
+                                        </el-menu-item>
+                                        <el-menu-item index="3-3">
+                                            <router-link to="">构造方法</router-link>
+                                        </el-menu-item>
+                                        <el-menu-item index="3-3">
+                                            <router-link to="">垃圾回收</router-link>
+                                        </el-menu-item>
+                                        <el-menu-item index="3-3">
+                                            <router-link to="">this</router-link>
                                         </el-menu-item>
                                     </el-menu-item-group>
                                 </el-submenu>
                                 <el-submenu index="4">
-                                    <template slot="title"><i class="el-icon-caret-right"></i>java面向对象进阶</template>
+                                    <template slot="title"><i class="el-icon-location"></i>java面向对象进阶</template>
                                     <el-menu-item-group>
                                         <el-menu-item index="4-1">
-                                            <router-link to="">循环语句</router-link>
+                                            <router-link to="">继承 instanceof运算符</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="4-2">
-                                            <router-link to="">方法</router-link>
+                                            <router-link to="">方法的重写override</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="4-3">
-                                            <router-link to="">方法的重载(overload)</router-link>
+                                            <router-link to="">toString方法</router-link>
+                                        </el-menu-item>
+                                        <el-menu-item index="4-3">
+                                            <router-link to="">equals和==方法</router-link>
                                         </el-menu-item>
                                     </el-menu-item-group>
                                 </el-submenu>
@@ -91,11 +103,8 @@
                         <el-container>
 
                             <div class="right-content">
-                                <el-main v-if="Vshow">
+                                <el-main>
                                     <router-view />
-                                </el-main>
-                                <el-main v-else="Vshow">
-                                    aaaa
                                 </el-main>
                             </div>
 
@@ -119,7 +128,6 @@
         name:'javamanual',
         data(){
             return{
-                Vshow:true
 
             }
         },

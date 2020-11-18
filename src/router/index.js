@@ -81,10 +81,11 @@ const routes = [
     path: '/details/javamanual',
     component: () => import("@/views/details/JavaManual"),
     name: 'javamanual',
+    redirect:'/java/notes',
     children: [
       {path: '/java/notes',component: () => import("@/views/details/java/Notes")},
       {path: '/java/identifier',component: () => import("@/views/details/java/Identifier")},
-      {path: '/java/keyword',component: () => import("@/views/details/java/KeyWord")},
+      {path: '/java/keyword',component: () => import("@/views/details/java/KeyWords")}
     ],
     meta:{
       title: "Java基本教程语法"
