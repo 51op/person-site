@@ -25,6 +25,16 @@ Vue.use(Highlight);
 Vue.config.productionTip = false
 
 
+
+// import showdown from 'showdown'
+// Vue.prototype.md2html = (md)=> {
+//   let converter = new showdown.Converter()
+//   let text = md.toString()
+//   let html = converter.makeHtml(text)
+//   return html
+// }
+
+
 router.beforeEach((to, from, next) => {
   /* 路由发生变化修改页面title */
   if (to.meta.title) {

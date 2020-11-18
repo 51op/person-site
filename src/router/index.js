@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Index from "../components/Index";
 import TikuList from "../components/TikuList";
 import test from "../components/test/Test"
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -15,7 +14,7 @@ const routes = [
 
   {
     path: '/test',
-    name: 'test',
+    // name: 'test',
     component: test,
     meta: {
       title: 'test'
@@ -78,6 +77,20 @@ const routes = [
       title: "yield用法"
     }
   },
+  {
+    path: '/details/javamanual',
+    component: () => import("@/views/details/JavaManual"),
+    name: 'javamanual',
+    children: [
+      {path: '/java/notes',component: () => import("@/views/details/java/Notes")},
+      {path: '/java/identifier',component: () => import("@/views/details/java/Identifier")},
+      {path: '/java/keyword',component: () => import("@/views/details/java/KeyWord")},
+    ],
+    meta:{
+      title: "Java基本教程语法"
+    }
+  },
+
 
 ]
 

@@ -2,7 +2,8 @@
     <div class="box-content">
         <div class="content">
             <div class="item-1" v-for="item in list" :key="item.name">
-                <a href="/">{{ item.name }}</a>
+<!--                <a href="/">{{ item.name }}</a>-->
+                <router-link :to="{path:'/details/'+item.href}">{{ item.name }}</router-link>
                 <p>{{ item.text }}</p>
             </div>
 
@@ -29,8 +30,9 @@
                 'imgurl':require('@/assets/img/shequ_gaitubao_378x130.png'),
                 list: [
                     {
-                       name:"Java教程",
-                        text:"Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程"
+                        name:"Java教程",
+                        text:"Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程",
+                        href:"javamanual"
                     },
 
                     {

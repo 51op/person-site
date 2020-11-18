@@ -20,9 +20,23 @@ module.exports = {
       resolve:{
           alias:{
               //在html中<img src="@/assets/img/kube04.png"/>
-              assets:path.resolve(__dirname,"assets"),
-              components:path.resolve(__dirname,"components")
+              'assets':path.resolve(__dirname,"assets"),
+
+              'components':path.resolve(__dirname,"components"),
+              '@':path.resolve(__dirname,'src')
           }
-      }
+      },
     },
+    chainWebpack: config => {
+        config.module.rule('md')
+            .test(/\.md/)
+            .use('vue-loader')
+            .loader('vue-loader')
+            .end()
+            .use('vue-markdown-loader')
+            .loader('vue-markdown-loader/lib/markdown-compiler')
+            .options({
+                raw: true
+            })
+    }
 }

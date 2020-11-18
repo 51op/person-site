@@ -24,39 +24,39 @@
 <!--       <input type="text" value="message">-->
 <!--       <input type="text" :value="message" v-on:input="message=$event.target.value">-->
 
-<div v-if="books.length">
-       <table>
-           <thead>
-           <tr>
-               <th></th>
-               <th>书籍名称</th>
-               <th>出版日期</th>
-               <th>价格</th>
-               <th>购买数量</th>
-               <th>操作</th>
-           </tr>
-           </thead>
-           <tbody>
-           <tr v-for="(item,index) in books">
-               <td>{{item.id}}</td>
-               <td>{{item.name}}</td>
-               <td>{{item.date}}</td>
-               <td>{{item.price|showPrice}}</td>
-<!--               <td>{{getFinalPrice(item.price)}}</td>-->
-               <td>
-                   <button @click="decrement(index)" :disabled="item.count <= 1">-</button>
-                   {{item.count}}
-                   <button @click="increment(index)">+</button>
+<!--<div v-if="books.length">-->
+<!--       <table>-->
+<!--           <thead>-->
+<!--           <tr>-->
+<!--               <th></th>-->
+<!--               <th>书籍名称</th>-->
+<!--               <th>出版日期</th>-->
+<!--               <th>价格</th>-->
+<!--               <th>购买数量</th>-->
+<!--               <th>操作</th>-->
+<!--           </tr>-->
+<!--           </thead>-->
+<!--           <tbody>-->
+<!--           <tr v-for="(item,index) in books">-->
+<!--               <td>{{item.id}}</td>-->
+<!--               <td>{{item.name}}</td>-->
+<!--               <td>{{item.date}}</td>-->
+<!--               <td>{{item.price|showPrice}}</td>-->
+<!--&lt;!&ndash;               <td>{{getFinalPrice(item.price)}}</td>&ndash;&gt;-->
+<!--               <td>-->
+<!--                   <button @click="decrement(index)" :disabled="item.count <= 1">-</button>-->
+<!--                   {{item.count}}-->
+<!--                   <button @click="increment(index)">+</button>-->
 
-               </td>
-               <td><button @click="removeHandler(index)">移除</button></td>
-           </tr>
-           </tbody>
-       </table>
-       <h2>总价格:{{totalPrice|showPrice}}</h2>
+<!--               </td>-->
+<!--               <td><button @click="removeHandler(index)">移除</button></td>-->
+<!--           </tr>-->
+<!--           </tbody>-->
+<!--       </table>-->
+<!--       <h2>总价格:{{totalPrice|showPrice}}</h2>-->
 
-</div>
-       <h2 v-else>购物车为空</h2>
+<!--</div>-->
+<!--       <h2 v-else>购物车为空</h2>-->
 
 
 <!--       <cmpone :forChildMsg="books"></cmpone>-->
@@ -64,32 +64,73 @@
 <!--       自定义事件，接收子组件传递的数据据-->
 <!--       <cmpone @itemclick="cpnclick"></cmpone>-->
 
-       <h2>父组件中num1 num2的值</h2>
-       <div style="margin: 40px 50px;">{{num1}}</div>
-       <div style="margin: 40px 50px;">{{num2}}</div>
+<!--       <h2>父组件中num1 num2的值</h2>-->
+<!--       <div style="margin: 40px 50px;">{{num1}}</div>-->
+<!--       <div style="margin: 40px 50px;">{{num2}}</div>-->
 
 
-       <cmpone :num1="num1" :num2="num2" ref="cmpone"></cmpone>
+<!--       <cmpone :num1="num1" :num2="num2" ref="cmpone"></cmpone>-->
 
-       <button @click="Btrefs">父组件引用子组件</button>
+<!--       <button @click="Btrefs">父组件引用子组件</button>-->
 
 
-       <cmptwo><button>点下</button></cmptwo>
-       <cmptwo></cmptwo>
-       <cmptwo> <span slot="center">标题</span></cmptwo>
+<!--       <cmptwo><button>点下</button></cmptwo>-->
+<!--       <cmptwo></cmptwo>-->
+<!--       <cmptwo> <span slot="center">标题</span></cmptwo>-->
 
-       <cmpthree>
-           <div slot-scope="slot">
+<!--       <cmpthree>-->
+<!--           <div slot-scope="slot">-->
 
 <!--               <span v-for="item in slot.data">{{item}}&#45;&#45;&#45;&#45;</span>-->
-               <span>{{slot.data.join('----')}}</span>
-           </div>
+<!--               <span>{{slot.data.join('&#45;&#45;&#45;&#45;')}}</span>-->
+<!--           </div>-->
 
-       </cmpthree>
-       <cmpthree></cmpthree>
+<!--       </cmpthree>-->
+<!--       <cmpthree></cmpthree>-->
+
+       <div class="markdown-body">
+           <about />
+       </div>
 
 
+       <div>
+<!--           <el-container>-->
+<!--               <el-aside width="200px">-->
+<!--                   <el-menu>-->
+<!--                       <el-submenu index="1">-->
+<!--                           <template slot="title"><i class="el-icon-caret-right"></i>用户管理</template>-->
+<!--                           <el-menu-item-group>-->
+<!--                               <el-menu-item index="1-1">-->
+<!--                                   <router-link to="/user/profile">个人信息</router-link>-->
+<!--                               </el-menu-item>-->
+<!--                               <el-menu-item index="1-2">-->
+<!--                                   <router-link to="/user/list">用户列表</router-link>-->
+<!--                               </el-menu-item>-->
+<!--                           </el-menu-item-group>-->
+<!--                       </el-submenu>-->
+<!--                       <el-submenu index="2">-->
+<!--                           <template slot="title"><i class="el-icon-caret-right"></i>用户管理</template>-->
+<!--                           <el-menu-item-group>-->
+<!--                               <el-menu-item index="1-1">-->
+<!--                                   <router-link to="/user/profile">个人信息</router-link>-->
+<!--                               </el-menu-item>-->
+<!--                               <el-menu-item index="1-2">-->
+<!--                                   <router-link to="/user/list">用户列表</router-link>-->
+<!--                               </el-menu-item>-->
+<!--                           </el-menu-item-group>-->
+<!--                       </el-submenu>-->
+<!--                   </el-menu>-->
+<!--               </el-aside>-->
 
+<!--               <el-container>-->
+
+<!--                   <el-main>-->
+<!--                       &lt;!&ndash;在这里展示视图&ndash;&gt;-->
+<!--                       <router-view />-->
+<!--                   </el-main>-->
+<!--               </el-container>-->
+<!--           </el-container>-->
+       </div>
 
    </div>
 </template>
@@ -97,12 +138,16 @@
 import Cmpone from './Cmpone'
 import Cmpthree from './Cmpthree'
 import Cmptwo from './Cmptwo'
+import about from './about.md'
+import 'highlight.js/styles/github.css'
+import 'github-markdown-css'
 export default {
     name: 'Test',
     components:{
         Cmpone,
         Cmptwo,
-        Cmpthree
+        Cmpthree,
+        about
     },
 
     props:{
@@ -163,7 +208,7 @@ export default {
             ],
             info:"info",
             num1:0,
-            num2:1
+            num2:1,
         }
     },
     methods: {
@@ -263,6 +308,13 @@ h2{
     color: red;
     margin: 30px 80px;
 }
-
+.el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
+}
+.el-aside {
+    color: #333;
+}
 
 </style>
