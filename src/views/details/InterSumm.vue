@@ -48,17 +48,15 @@
                 </p>
 
             <h1>6、python 用一行实现对一个列表中元素做平方操作</h1>
-            <code>
-                <li style="background-color:#f4f4f4;margin: 15px 30px;font-size: 16px">列表生成式 : newlist =  [a*a for a in list] </li>
-                 <li style="background-color:#f4f4f4;margin: 15px 30px;font-size: 16px">
-                     map 函数:<br>
-                     newlist = map(lambda a:a*a,list)<br>
-                     A1 = [1,2,3,4,5,6]<br>
-                     print(list(map(lambda x:x*2,A1)))<br>
-                     print([a*2 for a in A1])<br>
-                 </li>
+           <pre v-highlight><code>
+               列表生成式 : newlist =  [a*a for a in list]
+               map 函数:<br>
+               newlist = map(lambda a:a*a,list)
+               A1 = [1,2,3,4,5,6]<br>
+               print(list(map(lambda x:x*2,A1)))
+               print([a*2 for a in A1])
 
-            </code>
+            </code></pre>
             <el-divider></el-divider>
 
 
@@ -165,5 +163,8 @@ export  default {
         font-weight: bold;
         line-height: 45px;
 }
+    code{
+        margin: 8px 40px;
+    }
 
 </style>

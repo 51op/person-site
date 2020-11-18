@@ -1,9 +1,8 @@
 <template>
     <div class="detail-info">
-        <slot name="imgSlot"><img src="../assets/img/shouye.png" class="titlIcon"></slot>
-        <slot name="shouyeSlot"><div class="tiku-shouye"><router-link to="/">首页 <img src="../assets/img/jiantou.png"/></router-link></div></slot>
-<!--        <slot name="shouyeSlot"><div class="tiku-shouye"><router-link :to="'Index'">首页 &nbsp;&nbsp;&nbsp;&nbsp;></router-link></div></slot>-->
-        <slot name="contentSlot"><div class="iconContent"></div></slot>
+        <div class="iconimg"><slot name="imgSlot"><img src="../assets/img/shouye.png"></slot></div>
+        <div class="shouye"><slot name="shouyeSlot"><router-link to="/" tag="a">首页 <img src="../assets/img/jiantou.png"/></router-link></slot></div>
+        <div class="iconContent"><slot name="contentSlot"></slot></div>
     </div>
 </template>
 
@@ -14,20 +13,22 @@
 </script>
 
 <style scoped>
-    .tiku-shouye a {
-        text-decoration: none;
-        margin: auto 5px;
-    }
     .detail-info {
         display: flex;
         font-size: 14px;
         width: auto;
-        color: #333;
         margin: 20px 70px ;
-        /*padding: 2px;*/
+        line-height: 45px;
+        padding: 2px;
 
     }
-    .iconContent{
+    .shouye {
+        margin: 22px 2px;
+    }
+    .iconimg{
         margin: auto 5px;
+    }
+    .iconContent{
+        margin: 22px 5px;
     }
 </style>
