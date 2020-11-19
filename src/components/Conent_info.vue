@@ -45,6 +45,7 @@
                         id: 3,
                         img: require("../assets/img/pythonTitle_gaitubao_265x136.png"),
                         title: "python 生成器和迭代器",
+                        path:"pygen",
                         info: "python中生成器和迭代器最常用",
                         tag: "python"
                     },

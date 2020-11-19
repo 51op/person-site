@@ -78,6 +78,14 @@ const routes = [
     }
   },
   {
+    path: '/details/pygen',
+    component: () => import("@/views/details/PythonGenerator"),
+    name: 'PythonGenerator',
+    meta:{
+      title: "python生成器和迭代器"
+    }
+  },
+  {
     path: '/details/javamanual',
     component: () => import("@/views/details/JavaManual"),
     name: 'javamanual',
