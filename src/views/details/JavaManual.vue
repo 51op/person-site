@@ -10,7 +10,7 @@
                 <div class="nav-tree">
                     <el-container>
                         <el-aside width="200px">
-                            <el-menu >
+                            <el-menu default-active="1-3"  text-color="#A52A2A">
                                 <el-submenu index="1" >
                                     <template slot="title"><i class="el-icon-location"></i>基本语法</template>
                                     <el-menu-item-group >
@@ -44,14 +44,12 @@
                                     <template slot="title"><i class="el-icon-location"></i>控制语句</template>
                                     <el-menu-item-group>
                                         <el-menu-item index="2-1">
-                                            <router-link to="">循环语句</router-link>
+                                            <router-link to="/java/loop">循环语句</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="2-2">
-                                            <router-link to="">方法</router-link>
+                                            <router-link to="/java/method">方法/方法重载</router-link>
                                         </el-menu-item>
-                                        <el-menu-item index="2-3">
-                                            <router-link to="">方法的重载(overload)</router-link>
-                                        </el-menu-item>
+
                                     </el-menu-item-group>
                                 </el-submenu>
                                 <el-submenu index="3">

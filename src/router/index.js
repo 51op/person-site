@@ -92,6 +92,7 @@ const routes = [
       {path: '/java/basictype',component: () => import("@/views/details/java/BasicType")},
       {path: '/java/operator',component: () => import("@/views/details/java/Operator")},
       {path: '/java/loop',component: () => import("@/views/details/java/Loop")},
+      {path: '/java/method',component: () => import("@/views/details/java/Method")},
     ],
     meta:{
       title: "Java基本教程语法"

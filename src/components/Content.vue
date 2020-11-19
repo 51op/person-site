@@ -37,29 +37,35 @@
 
                     {
                         name:"Python教程",
-                        text:"Python是一种不受局限、跨平台的开源编程语言，其数据处理速度快、功能强大且简单易学，在数据分析与处理中被广泛应用"
+                        text:"Python是一种不受局限、跨平台的开源编程语言，其数据处理速度快、功能强大且简单易学，在数据分析与处理中被广泛应用",
+                        href:"javamanual"
                     },
                     {
                         name:"Docker教程",
-                        text:"Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。"
+                        text:"Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。",
+                        href:"javamanual"
                     },
 
                     {
                         name:"K8s教程",
-                        text:"Kubernetes 是一个自动化部署，缩放，以及容器化管理应用程序的开源系统,可弹性伸缩扩容"
+                        text:"Kubernetes 是一个自动化部署，缩放，以及容器化管理应用程序的开源系统,可弹性伸缩扩容",
+                        href:"javamanual"
                     },
                     {
                         name:"Nginx教程",
-                        text:"Nginx是一款轻量级的Web服务器、反向代理服务器,其特点占用内存少，并发高，模块众多等"
+                        text:"Nginx是一款轻量级的Web服务器、反向代理服务器,其特点占用内存少，并发高，模块众多等",
+                        href:"javamanual"
                     },
 
                     {
                         name:"Shell教程",
-                        text:"Linux 命令行与 shell 脚本编程的全方位教程，主要包括四大部分：Linux 命令行，shell 脚本编程基础，高级 shell 脚本编程，如何创建实用的 shell 脚本"
+                        text:"Linux 命令行与 shell 脚本编程的全方位教程，主要包括四大部分：Linux 命令行，shell 脚本编程基础，高级 shell 脚本编程，如何创建实用的 shell 脚本",
+                        href:"javamanual"
                     },
                     {
                         name:"Mysql教程",
-                        text:"MySQL是一个关系型数据库管理系统,MySQL是一种关联数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性"
+                        text:"MySQL是一个关系型数据库管理系统,MySQL是一种关联数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性",
+                        href:"javamanual"
                     },
                 ]
             }
