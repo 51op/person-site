@@ -85,7 +85,13 @@ const routes = [
     children: [
       {path: '/java/notes',component: () => import("@/views/details/java/Notes")},
       {path: '/java/identifier',component: () => import("@/views/details/java/Identifier")},
-      {path: '/java/keyword',component: () => import("@/views/details/java/KeyWords")}
+      {path: '/java/keyword',component: () => import("@/views/details/java/KeyWords")},
+      {path: '/java/fac',component: () => import("@/views/details/java/Valu")},
+      {path: '/java/fenlei',component: () => import("@/views/details/java/FenLei")},
+      {path: '/java/changliang',component: () => import("@/views/details/java/ChangLiang")},
+      {path: '/java/basictype',component: () => import("@/views/details/java/BasicType")},
+      {path: '/java/operator',component: () => import("@/views/details/java/Operator")},
+      {path: '/java/loop',component: () => import("@/views/details/java/Loop")},
     ],
     meta:{
       title: "Java基本教程语法"

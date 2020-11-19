@@ -24,22 +24,19 @@
                                             <router-link to="/java/keyword">Java中的关键字/保留字</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="1-4">
-                                            <router-link to="">变量的本质</router-link>
+                                            <router-link to="/java/fac">变量的本质</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="1-5">
-                                            <router-link to="">变量的分类</router-link>
+                                            <router-link to="/java/fenlei">变量的分类</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="1-6">
-                                            <router-link to="">常量(Constant)</router-link>
+                                            <router-link to="/java/changliang">常量(Constant)</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="1-7">
-                                            <router-link to="">基本数据类型</router-link>
+                                            <router-link to="/java/basictype">基本数据类型</router-link>
                                         </el-menu-item>
                                         <el-menu-item index="1-8">
-                                            <router-link to="">运算符</router-link>
-                                        </el-menu-item>
-                                        <el-menu-item index="1-9">
-                                            <router-link to="">类型转换</router-link>
+                                            <router-link to="/java/operator">运算符</router-link>
                                         </el-menu-item>
                                     </el-menu-item-group>
                                 </el-submenu>
@@ -168,6 +165,7 @@
   }
     .right-content{
         width: 760px;
+        margin: 10px;
     }
 
 </style>
