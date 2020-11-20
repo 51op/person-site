@@ -60,7 +60,7 @@
                     {
                         name:"Shell教程",
                         text:"Linux 命令行与 shell 脚本编程的全方位教程，主要包括四大部分：Linux 命令行，shell 脚本编程基础，高级 shell 脚本编程，如何创建实用的 shell 脚本",
-                        href:"javamanual"
+                        href:"ShellManual"
                     },
                     {
                         name:"Mysql教程",

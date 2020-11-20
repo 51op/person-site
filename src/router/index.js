@@ -86,6 +86,14 @@ const routes = [
     }
   },
   {
+    path: '/details/shellmanual',
+    component: () => import("@/views/details/ShellManual"),
+    name: 'ShellManual',
+    meta:{
+      title: "Shell教程"
+    }
+  },
+  {
     path: '/details/javamanual',
     component: () => import("@/views/details/JavaManual"),
     name: 'javamanual',
