@@ -284,8 +284,6 @@ then
 else
   echo "$decimal is not equal to $octal"
 fi      
-  
-
 ```
 ```python
 #简单表达式写法

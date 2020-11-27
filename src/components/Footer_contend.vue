@@ -21,7 +21,7 @@
                         <div class="footer-txt-link"><a href="https://www.iyunv.com/" title="" target=_blank>运维网</a></div>
                         <div class="footer-txt-link"><a href="http://www.178linux.com/" title="" target=_blank>运维部落</a></div>
                         <div class="footer-txt-link"><a href="http://www.bigops.com/" title="" target=_blank>运维帮</a></div>
-                        <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
+                        <div class="footer-txt-link"><a href="https://studygolang.com/" title="" target=_blank>Golang社区</a></div>
                         <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
                         <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
                         <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>

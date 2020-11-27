@@ -94,6 +94,14 @@ const routes = [
     }
   },
   {
+    path: '/details/gomanual',
+    component: () => import("@/views/details/GoManual"),
+    name: 'gomanual',
+    meta:{
+      title: "Golang教程"
+    }
+  },
+  {
     path: '/details/javamanual',
     component: () => import("@/views/details/JavaManual"),
     name: 'javamanual',

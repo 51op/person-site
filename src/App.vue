@@ -12,7 +12,5 @@
 </script>
 
 <style>
-#app {
-}
 
 </style>

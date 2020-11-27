@@ -38,23 +38,23 @@
                     {
                         name:"Python教程",
                         text:"Python是一种不受局限、跨平台的开源编程语言，其数据处理速度快、功能强大且简单易学，在数据分析与处理中被广泛应用",
-                        href:"javamanual"
+                        href:"pythonmanual"
                     },
                     {
                         name:"Docker教程",
                         text:"Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。",
-                        href:"javamanual"
+                        href:"dockermanual"
                     },
 
                     {
                         name:"K8s教程",
                         text:"Kubernetes 是一个自动化部署，缩放，以及容器化管理应用程序的开源系统,可弹性伸缩扩容",
-                        href:"javamanual"
+                        href:"k8smanual"
                     },
                     {
                         name:"Nginx教程",
                         text:"Nginx是一款轻量级的Web服务器、反向代理服务器,其特点占用内存少，并发高，模块众多等",
-                        href:"javamanual"
+                        href:"nginxmanual"
                     },
 
                     {
@@ -65,8 +65,16 @@
                     {
                         name:"Mysql教程",
                         text:"MySQL是一个关系型数据库管理系统,MySQL是一种关联数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性",
-                        href:"javamanual"
+                        href:"mysqlmanual"
                     },
+                    {
+                        name:"Golang教程",
+                        text:"Go 是一个开源的编程语言，它能让构造简单、可靠且高效的软件变得容易，Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。\n" +
+                            "\n" +
+                            "对于高性能分布式系统领域而言，Go 语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了",
+                        href:"gomanual"
+                    },
+
                 ]
             }
         }
@@ -90,7 +98,7 @@
         padding: 10px 5px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
     .item-1{
         width: 280px;
