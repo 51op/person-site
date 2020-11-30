@@ -23,11 +23,6 @@
                         <div class="footer-txt-link"><a href="http://www.bigops.com/" title="" target=_blank>运维帮</a></div>
                         <div class="footer-txt-link"><a href="https://studygolang.com/" title="" target=_blank>Golang社区</a></div>
                         <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
-                        <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
-                        <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
-                        <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
-                        <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
-                        <div class="footer-txt-link"><a href="http://www.ctolib.com/" title="" target=_blank>码库</a></div>
 
 
                 </div>

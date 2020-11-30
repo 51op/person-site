@@ -1,3 +1,13 @@
+### 第1章 Go介绍
+初试go
+```go
+package main
+import "fmt"
+func main()  {
+	fmt.Println("hello word")
+}
+```
+### 第2章 Go基本语法
 #### 2.1变量
 
 ##### 2.1.1. go语言中变量分为局部变量和全局变量
@@ -6,12 +16,12 @@
 * 全局变量，是定义在函数和打括号外部{}的变量
 
 ##### 2.1.2. 变量声明
-```
+```go
 格式：
 var  变量名 变量类型
 ```
 批量声明未初始化的变量
-```
+```go
 var {
     a int
     b string
@@ -24,7 +34,7 @@ var {
 ```
 初始化变量
 
-```
+```go
 var a int = 20 #标准声明格式
 var b = 30 #自动推断类型格式
 c := 40 #初始化声明格式，首选
@@ -32,7 +42,7 @@ c := 40 #初始化声明格式，首选
 
 ##### 2.1.3.变量多重赋值
 以简单算法交换为例，传统写法如下
-```
+```go
 var a int = 10
 var b int = 20
 b,a = a,b
@@ -42,7 +52,7 @@ b,a = a,b
 
 Go语言中的函数可以返回多个值，而事实上并不是所有返回值都用的上，那么就可以用匿名变量 “_” 替换即可，匿名变量不占用命名空间，也不会分配内存
 
-```
+```go
 func GetData()(int,int){
     return 10,20
 }
@@ -54,7 +64,7 @@ _,b = GetData()//舍弃第一个返回值
 #### 2.4 数据类型转换
 Go语言采用数据类型前置加括号的方式进行类型转换,格式如：T(表达式)。T表示要转换的类型
 
-```
+```go
 a := 10
 
 b := string(a) //将int型转换为string型
@@ -65,7 +75,7 @@ c := float32(a) //将int型转换为float型
 相对于变量，常量是不变的值。
 常量是一个简单的标识符，在程序运行时，不会被修改
 
-```
+```go
 格式如下：
 const   标识符 [类型] = 值
 const PAI string = "abc"
@@ -73,7 +83,7 @@ const PAI string = "abc"
 
 * ##### 2.5.1 常量用于枚举
 
-```
+```go
 const (
 	USERNAME = "geinihua"
 	PASSWORD = "geinihua"
@@ -87,7 +97,7 @@ const (
 ```
 常量组中如果不指定类型和初始值，则与上一行非空常量值相同
 
-```
+```go
 const (
     a=10
     b
@@ -104,11 +114,12 @@ fmt.PrintLn(a,b,c) //输出结果10 10 10
 * 多个常量可以写一个iota，在一个括号里
 * 多重赋值，在同一行，值一样
 
-![3b67aae4c2761561e9cae9acf301af45.png](evernotecid://FD137B74-F047-48AE-B182-0E1701384D4C/appyinxiangcom/23244031/ENResource/p1651)
+![](https://gitee.com/stto_32/img/raw/master/20201130173234.png) 
+
  
  #### 3. 流程控制
  * 3.1 if 条件判断语句
- ```
+ ```go
  func max(num1, num2 int) int {
 	/* 声明局部变量 */
 	var result int
@@ -123,7 +134,7 @@ fmt.PrintLn(a,b,c) //输出结果10 10 10
 
  ```
  * 3.2 switch 条件选择语句
- ```
+ ```go
  
 	grade := ""
 	score := 88.5
@@ -143,7 +154,7 @@ fmt.PrintLn(a,b,c) //输出结果10 10 10
  ```
  * 3.3 for 循环语句
 
-```
+```go
 第一种写法：
 for i:=0;i<=20 ;i++  {
 		fmt.Printf("%d\n",i)
@@ -164,7 +175,7 @@ for i:=0;i<=20 ;i++  {
  
  #### 4.Go语言的函数与指针
  ##### 4.1 函数
- ```
+ ```go
  func(参数列表)(返回参数列表){
    //函数体
 }
@@ -174,7 +185,7 @@ for i:=0;i<=20 ;i++  {
  
  > 函数变量是把函数作为值保存到变量中.
 在Golang中,,函数也是一种类型,可以和其他类型一样被保存在变量中
- ```
+ ```go
  type myFunc func(int) bool
 func main(){
 
@@ -212,7 +223,7 @@ func  isAdd(num int) bool{
 > 匿名函数没有函数名，只有函数体，可以作为一种类型赋值给变量。
 匿名函数经常被用于实现回调函数、闭包等
 
-```
+```go
 1.在定义匿名函数的时候就可以直接使用
 res1 := func (n1 int, n2 int) int {
         return n1 + n2
@@ -245,7 +256,7 @@ func vist(list []float64,f func(float64))  {
 
 
 
-```
+```go
 //函数f返回了一个函数，返回的这个函数就是一个闭包。这个函数本身中没有定义变量I的，而是引用了它所在的环境（函数f）中的变量i.
     func f(i int) func() int  {
         return func() int{
@@ -261,12 +272,12 @@ func vist(list []float64,f func(float64))  {
 
 ```
 ##### 4.1.6 可变参数
-```
+```go
 语法格式：
 func 函数名(参数名...类型)(返回值列表){}
 ```
 该语法格式定义了一个接受任何数目、任何类型参数的函数。这里特殊语法是三个点"..."，在一个变量后面加上三个点，表示从该处开始接受可变参数
-```
+```go
 func Tsum(nums ...int) {
 	fmt.Println(nums)
 	total:=0
@@ -282,11 +293,12 @@ func Tsum(nums ...int) {
  > 要开始一个单元测试，需要准备一个 go 源码文件，在命名文件时需要让文件必须以_test结尾
     单元测试源码文件可以由多个测试用例组成，每个测试用例函数需要以Test为前缀，例如：
 
-
-
-```func TestXXX( t *testing.T )```
+```go
+格式如下：
+func TestXXX( t *testing.T )
 ```
-//参数从1到多个int,Go支持可变参数
+
+```go
 func sum2(n1 int, args ...int) int {
 	sum := n1
 	for i := 0; i < len(args); i++ {
@@ -305,15 +317,15 @@ func TestAvaiableSum(t *testing.T) {
 > 指针式存储另一个变量的内存地址的变量。变量是一种使用方便的占位符。一个指针变量可以指向任何一个值的内存地址
 > 在Go语言中使用地址符&来获取变量的地址，一个变量前使用&会返回该变量的内存地址
 
-```
+```go
 total:=20
 fmt.Println("total的内存地址",&total)
 ```
 
-* ##### 声明指针
+##### 4.2.1 声明指针
 ```格式：var 指针变量 *指针类型```
 声明指针，*T是指针变量的类型，它指向T类型的值，*号用于指定变量是一个指针
-```
+```go
 var ip *int //指向整型的指针
 var fp *float32 //指向浮点型的指针
 ```
@@ -324,7 +336,7 @@ var fp *float32 //指向浮点型的指针
 3.访问指针变量中指向地址的值
 获取指针变量指向的变量值：在指针类型的变量前加上*号。如*a
 
-```
+```go
 type Student struct {
 	name string
 	age int
@@ -348,5 +360,274 @@ func TestZhiz(t *testing.T)  {
 
 }
 ```
+*  空指针
+```go
+if(ptr != nil) //ptr不是空指针
+if(ptr == nil)//ptr是空指针
+```
+
+##### 4.2.2 使用指针
+
+1.通过指针修改变量的值
+
+```go
+//指针修改变量的值
+	a2:=32
+	b2:=&a2
+	fmt.Println("a2的值",a2) //a2的值 32
+	fmt.Println("b2地址",b2) //b2地址 0xc4200142d8
+	fmt.Println("b2的值",*b2) //b2的值 32
+	*b2++
+	fmt.Println("b2的值",*b2) //b2的值 33
+    
+```
+2.使用指针作为函数的参数
+
+将基本数据类型的指针作为函数的参数，可以实现对传入数据的修改，这是因为指针作为函数的参数只是赋值了一个指针，指针指向的内存没有发生改变
+```go
+func main(){
+orgi:=68
+		ptr:=&orgi
+		change(ptr)
+		fmt.Println("执行函数后orgi的值",orgi) //执行函数后orgi的值 20
+}
+func change(p *int)  {
+	*p=20
+}
+
+```
+
+##### 4.2.3 指针数组
+
+```go
+//指针数组
+//格式：var ptr [3]*string
+
+ptrArr:=[COUNT]string{"abc","ABC","123","8888"}
+
+i:=0
+//定义指针数组
+var ptrPoint [COUNT]*string
+fmt.Printf("%T,%v \n",ptrPoint,ptrPoint) //[4]*string,[<nil> <nil> <nil> <nil>]
+
+//将数组中的每个元素地址赋值给指针数组
+	for i=0;i<COUNT;i++ {
+		ptrPoint[i] = &ptrArr[i]
+	}
+
+	fmt.Printf("%T,%v \n",ptrPoint,ptrPoint) //[4]*string,[0xc42000e800 0xc42000e810 0xc42000e820 0xc42000e830]
+
+	//循环取指针数组中的值
+	for i=0;i<COUNT;i++ {
+		fmt.Printf("a[%d]=%v \n",i, *ptrPoint[i])
+		//a[0]=abc 
+		//a[1]=ABC 
+		//a[2]=123 
+		//a[3]=8888 
+	}
+```
+#### 4.2.4 指针的指针
+
+指向指针的指针变量声明格式如下：
+```go
+var ptr **int//使用两个*号
+```
+```go
+
+//指针的指针
+var a2 int
+var ptr2 *int
+var pptr **int
+a2=1234
+ptr2=&a2
+fmt.Println("ptr地址",ptr2)
+pptr=&ptr
+fmt.Println("pptr地址",pptr)
+
+fmt.Printf("变量a2=%d\n",a2)
+fmt.Printf("指针变量ptr2=%d\n",*ptr2)
+fmt.Printf("指向指针的指针量pptr=%d\n",**pptr)
+//输出结果
+/*
+ptr地址 0xc4200d4140
+pptr地址 0xc4200ec000
+变量a2=1234
+指针变量ptr2=1234
+指向指针的指针量pptr=20
+*/
+```
+
+
+#### 4.3 函数的参数传递
+##### 4.3.1  值传递(传值)
+    值传递是指在调用函数时将实际参数复制一份传递到函数中，不会影响原内容数据
+##### 4.3.2  引用传递(传引用)
+    1.引用传递是在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改将影响原内容数据
+    2.Go中可以借助指针来实现引用传递。函数参数使用指针参数，传参的时候其实是复制一份指针参数，也就是复制了一份变量地址
+    3.函数的参数如果是指针，当调用函数时，虽然参数是按复制传递的，但此时仅仅只是复制一个指针，也就是一个内存地址，这样不会造成内存浪费、时间开销
+  
+
+函数传int类型的值与引用对比
+ ```go
+ package main
+ 
+ import "fmt"
+ 
+ func main()  {
+ 
+ 	//函数传int类型的值与引用对比
+ 	a:=200
+ 	fmt.Printf("变量a的内存地址%p,值为：%v\n",&a,a)
+ 	changeIntVal(a)
+ 	fmt.Printf("changeIntVal函数调用后变量a的内存地址%p,值为：%v\n",&a,a)
+ 	changeIntPtr(&a)
+ 	fmt.Printf("changeIntPtr函数调用后变量a的内存地址%p,值为：%v\n",&a,a)
+ 	/*
+ 	变量a的内存地址0xc420080008,值为：200
+ 	changeIntVal函数，传递的参数n的内存地址：0xc420080018，值为：200
+ 	changeIntVal函数调用后变量a的内存地址0xc420080008,值为：200
+ 	changeIntPtr函数，传递的参数n的内存地址：0xc42008a020，值为：0xc420080008
+ 	changeIntPtr函数调用后变量a的内存地址0xc420080008,值为：50
+ 	*/
+ }
+ func changeIntVal(n int)  {
+ 	fmt.Printf("changeIntVal函数，传递的参数n的内存地址：%p，值为：%v\n",&n,n)
+ 	n=90
+ }
+ func changeIntPtr(n *int)  {
+ 	fmt.Printf("changeIntPtr函数，传递的参数n的内存地址：%p，值为：%v\n",&n,n)
+ 	*n=50
+ }
+ ```
+ 函数传slice类型的值与引用对比
+ ```go
+import "fmt"
+func main()  {
+	//函数传slice类型的值与引用对比
+	a:=[]int{1,2,3,4}
+	fmt.Printf("变量a的内存地址%p,值为：%v\n",&a,a)
+	changeSliceVal(a)
+	fmt.Printf("changeSliceVal函数调用后变量a的内存地址%p,值为：%v\n",&a,a)
+	changeSlicePtr(&a)
+	fmt.Printf("changeSlicePtr函数调用后变量a的内存地址%p,值为：%v\n",&a,a)
+}
+func changeSliceVal(n []int)  {
+	fmt.Printf("changeSliceVal函数，传递的参数n的内存地址：%p，值为：%v\n",&n,n)
+	n[0]=90
+}
+func changeSlicePtr(n *[]int)  {
+	fmt.Printf("changeSlicePtr函数，传递的参数n的内存地址：%p，值为：%v\n",&n,n)
+	(*n)[1]=50
+}
+```
+ ![](https://gitee.com/stto_32/img/raw/master/20201130153318.png)
+ 
+ 函数传结构体
+ ```go
+package main
+import "fmt"
+type  Teater struct {
+	name string
+	age int
+}
+func main()  {
+	//函数传结构体
+	a:=Teater{"xll",200}
+	fmt.Printf("变量a的内存地址%p,值为：%v\n",&a,a)
+	changeStructVal(a)
+	fmt.Printf("changeStructVal函数调用后变量a的内存地址%p,值为：%v\n",&a,a)
+	changeStructPtr(&a)
+	fmt.Printf("changeStructPtr函数调用后变量a的内存地址%p,值为：%v\n",&a,a)
+}
+func changeStructVal(n Teater)  {
+	fmt.Printf("changeStructVal函数，传递的参数n的内存地址：%p，值为：%v\n",&n,n)
+	n.name="testtest"
+}
+func changeStructPtr(n *Teater)  {
+	fmt.Printf("changeStructPtr函数，传递的参数n的内存地址：%p，值为：%v \n",&n,n)
+	(*n).name="ptrptr"
+	(*n).age=899
+}
+```
+ ![](https://gitee.com/stto_32/img/raw/master/20201130161213.png)
+ 
+ 
+### 第5章 Go语言的内置容器
+
+#### 5.1 数组
+* 数组语法
+```go
+格式如下：
+var 变量名 [数组长度]数据类型
+```
+1.数组长度必须是整数且大于0，未初始化的数组不是nil，也就是说没有空数组(与切片不同)
+2.初始化数组格式如下:
+```go
+var arr = [6]int{1,2,3,4,5,6}
+```
+初始化数组中{}中的元素个数不能大于[]中的数字
+如果忽略[]的数字，不设置数组长度，Go默认会设置数组的长度。可以忽略声明中数组的长度并将其替换为"..."。编译器会自动计算长度，格式如下
+```go
+var arr = [...]int{1,2,3,4,5,6}
+```
+3.修改数组内容，可用格式
+```go
+arr[2[=100
+```
+数组元素可以通过索引位置来读取,所以从0开始
+4.通过函数len()获取数组长度
+```go
+var arr = [...]int{1,2,3,4,5,6}
+fmt.Printf("数组长度%d \n",len(arr))
+```
+
+* 数组遍历
+```go
+arr:=[...]int{1,2,3,4,5,6}
+//第一种遍历方式
+for i:=0;i<len(arr);i++ {
+	fmt.Printf("元素值%v\n",arr[i])
+}
+fmt.Println("------")
+//第二种遍历方式
+for index,value:=range arr{
+	fmt.Printf("第 %d个元素值%v\n",index,value)
+	}
+```
+* 多维数组
+二维数声明格式如下:
+```go
+var arrName [x][y]数据类型
+```
+二维数组可以使用循环嵌套获取元素
+```go
+
+func main()  {
+	arr:=[5][2]int{
+		{0,0},
+		{1,2},
+		{2,4},
+		{3,6},
+		{4,8},
+	}
+	for i1,v:=range arr{
+		for i2,v2:=range v {
+			fmt.Printf("arr[%d][%d]=%d\n",i1,i2,v2)
+		}
+	}
+
+}
+```
+
+* 数组是值类型
+
+
+#### 5.2 切片
+
+#### 5.3 map
+##### 5.3.1 map概念
+##### 5.3.2 map语法
+##### 5.3.3 delete()函数
+##### 5.3.4 map是引用类型
 
 

@@ -41,7 +41,9 @@
     }
     .content{
         width: 960px;
-        background-color:#fff;
+        /*background-color:#fff;*/
+        background-color: #f6f6f6;
+
         margin: auto 70px;
     }
 
