@@ -114,8 +114,7 @@ fmt.PrintLn(a,b,c) //输出结果10 10 10
 * 多个常量可以写一个iota，在一个括号里
 * 多重赋值，在同一行，值一样
 
-![](https://gitee.com/stto_32/img/raw/master/20201130173234.png) 
-
+![](https://gitee.com/stto_32/img/raw/master/20201130173234.png)
  
  #### 3. 流程控制
  * 3.1 if 条件判断语句
@@ -620,14 +619,238 @@ func main()  {
 ```
 
 * 数组是值类型
-
+> Go中数组并非引用类型，而是值类型。当被分配给一个新变量时，会将原始数组复制出一份给新变量，因此对新变量进行更改，原始数组不会有影响
 
 #### 5.2 切片
+* 切片概念
+  1.Go中提供了一种内置类型"切片"，弥补了数组长度不变的缺陷。
+  2.切片是可变长度序列,序列中每个元素都是相同类型
+  3.从底层看，切片引用了数组对象。切片可以追加元素，追加元素时容量增大，与数组相比切片不需要设定长度
+  4.切片数据结构可以理解为一个结构体，包含三个要素。
+     指针，指向数组中切片指定的开始位置
+     长度，即切片长度
+     容量，也就是**切片开始位置**到数组最后位置的长度
 
+* 切片语法
+1.声明切片
+```go
+var identifier []type
+切片不需要说明长度，该切片默认为nil，长度为0
+```
+使用make()函数创建切片，格式如下：
+```go
+var sliceVar []type = make([]type,len,cap)
+简写：sliceVar:=make([]type,len,cap)//cap容量
+
+sliceVar:=make([]int,3,5)
+fmt.Printf("len=%d cap=%d slice=%v\n",len(sliceVar),cap(sliceVar),sliceVar) //len=3 cap=5 slice=[0 0 0]
+```
+2.初始化切片
+(1)直接初始化切片
+ ```go
+ sl:=[]int{1,2,3,4}
+```
+(2)通过数组截取来初始化切片
+```go
+arr:=[...]int{1,2,3,4,5}
+s1:=arr[:]
+```
+切片中包含数组中所有元素
+```go 
+s:=arr[startIndex:endIndex] 
+```
+将arr中从下标startIndex到endIndex-1下的元素创建为一个新的切片(前闭后开)，长度是endIndex-startIndex
+缺省endIndex时表示一直到arr的最后一个元素
+```go 
+s:=arr[startIndex:endIndex]
+```
+缺省startIndex时表示从arr的第一个元素开始
+```go
+s:=arr[startIndex:endIndex]
+```
+
+```go
+func main()  {
+	arr:=[]int{0,1,2,3,4,5,6,7,8}
+	printSlice(arr[:6]) //0 1 2 3 4 5 不包含6元素
+	printSlice(arr[3:]) //3 4 5 6 7 8  从索引3开始到末尾
+	printSlice(arr[2:5]) //2 3 4  从索引2开始(包含)到索引5(不包含)结束
+}
+func printSlice(n []int)  {
+	fmt.Printf("len=%d cap=%d slice=%v\n",len(n),cap(n),n)
+}
+```
+(3) **深入理解切片的容量，我们可以把容量当做成总长度减去左指针走过的元素值，比如** 
+```go
+s[:0] ——> cap = 6 - 0 =6；
+
+s[2:] ——> cap = 6 - 2 = 4。
+```
+* append()和copy()函数
+
+由此可知，容量随着底层数组长度的变化而不断变化，如果底层数组长度为4，在添加了一个元素后变成5，则容量变为 4*2=8，如果len=12，cap=12，如果追加一个元素后，那么新的cap=2*7=14。
+
+
+
+
+* 切片是引用类型
+  切片没有自己的任何数据，它仅是底层数组的一个引用，对切片的任何修改都将影响底层数组的数据，数组是值类型，切片是引用类型
+* **切片的源代码学习**
+可参考博客 https://www.cnblogs.com/xull0651/p/14067809.html
+```go
+func growslice(et *_type, old slice, cap int) slice {
+	
+	newcap := old.cap
+	doublecap := newcap + newcap
+	if cap > doublecap {
+		newcap = cap
+	} else {
+		if old.len < 1024 {
+			newcap = doublecap
+		} else {
+			// Check 0 < newcap to detect overflow
+			// and prevent an infinite loop.
+			for 0 < newcap && newcap < cap {
+				newcap += newcap / 4
+			}
+			// Set newcap to the requested cap when
+			// the newcap calculation overflowed.
+			if newcap <= 0 {
+				newcap = cap
+			}
+		}
+	}
+	return slice{p, old.len, newcap}
+}
+
+从上面的源码，在对 slice 进行 append 等操作时，可能会造成 slice 的自动扩容。其扩容时的大小增长规则是：
+a.如果切片的容量小于 1024，则扩容时其容量大小乘以2；一旦容量大小超过 1024，则增长因子变成 1.25，即每次增加原来容量的四分之一。
+b.如果扩容之后，还没有触及原数组的容量，则切片中的指针指向的还是原数组，如果扩容后超过了原数组的容量，则开辟一块新的内存，把原来的值拷贝过来，这种情况丝毫不会影响到原数组。
+
+```
+![](https://gitee.com/stto_32/img/raw/master/20201201145013.png)
 #### 5.3 map
-##### 5.3.1 map概念
-##### 5.3.2 map语法
-##### 5.3.3 delete()函数
-##### 5.3.4 map是引用类型
+* 5.3.1 map概念
+Map 是一种无序的键值对的集合。Map 最重要的一点是通过 key 来快速检索数据，key 类似于索引，指向数据的值。
+Map 是一种集合，所以我们可以像迭代数组和切片那样迭代它。不过，Map 是无序的，我们无法决定它的返回顺序，这是因为 Map 是使用 hash 表来实现的
+Map是hash表的一个引用，类型写为：map[key]value，其中的key, value分别对应一种数据类型，如：map[string]string
+要求所有的key的数据类型相同，所有value数据类型相同(注：key与value可以有不同的数据类型)
+* 5.3.2 map语法
+声明map
+```go
+第一种方法
+mapVar := map[key类型]value类型
+第二种方法
+mapVar := make(map[key类型]value类型)
+```
+map初始化和遍历
+```go
+	mapVar:=map[string]string{
+		"a":"t1",
+		"b":"t2",
+		"c":"t3",
+	}
+	//遍历map
+	for key, value := range mapVar {
+		fmt.Printf("key=%v value=%v\n",key,value)
+	}
 
+	//查看元素在集合中是否存在
+	if value,ok:=mapVar["aa"];ok {
+		fmt.Println("存在value",value)
+	}else {
+		fmt.Println("不存在value")
 
+	}
+
+```
+* 5.3.3 map是引用类型
+
+### Go常用内置包
+
+[可参考官网](https://golang.org/pkg/)
+* 字符串遍历
+ ```go
+str:="strings包：遍历带有中文的字符串"
+	for _, value := range []rune(str) {
+		fmt.Printf("%c\n",value)
+	}
+```
+
+### Go面向对象
+
+#### 结构体
+
+* 匿名结构体 和结构体匿名字段
+匿名结构体就是没有名字的结构体，无须通过type关键字定义就可以直接使用。创建匿名结构体的时候，同时也要创建结构体对象
+```go
+	//匿名结构体
+	addr:=struct{
+		name string
+		age int
+	}{"slaiven",39}
+	fmt.Println(addr)
+```
+**匿名字段就是在结构体中的字段没有名字，只包含一个没有字段名的类型**
+**如果字段没有名字，那么默认使用类型作为字段名，同一类型只能有一个匿名字段**
+
+```go
+//匿名字段
+	user:=new(User)
+	user.string="apce"
+	user.int=84
+	fmt.Printf("名字%v,年龄%v",user.string,user.int) //名字apce,年龄84
+```
+* 结构体嵌套
+将一个结构当作另一结构体的字段(属性),这种就是结构体嵌套，可以模拟以下两种关系.
+**聚合关系：一个类作为另一个类的属性，一定要采用有名字的结构体作为字段** 
+**继承关系:一个类作为另一个类的子类。子类与父类的关系。采用匿名字段的形式，匿名字段就该结构体的父类**
+```go
+//聚合关系：一个类作为另一个类的属性
+type Address struct {
+	province,city string
+}
+type Person struct {
+	name string
+	age int
+	address  *Address
+}
+
+func TestMoudelStrings(t *testing.T)  {
+	//实例化Address结构体
+	addr:=Address{}
+	addr.province="北京市"
+	addr.city="丰台区"
+	//实例化Person结构体
+	p:=Person{}
+	p.name="Strven"
+	p.age=28
+	p.address=&addr
+	fmt.Println("姓名：",p.name,"年龄：",p.age,"省：",p.address.province,"市：",p.address.city)
+	//如果修改了Person对象的address数据，那么对Address对象会有影响么？肯定的
+	p.address.city="大兴区"
+	fmt.Println("姓名：",p.name,"年龄：",p.age,"省：",p.address.province,"市：",addr.city)
+	//修改Address对象，是否会影响Persion对象数据？肯定的
+	addr.city="朝阳区"
+	fmt.Println("姓名：",p.name,"年龄：",p.age,"省：",p.address.province,"市：",addr.city)
+}
+//继承关系:一个类作为另一个类的子类。子类与父类的关系
+
+type Address struct {
+	province,city string
+}
+type Person struct {
+	name string
+	age int
+	Address //匿名字段，Address是Person的父类
+}
+func TestMoudelStrings(t *testing.T)  {
+	//实例化Address结构体
+	addr:=Address{}
+	addr.province="北京"
+	addr.city="丰台区"
+	//实例化Person结构体
+	p:=Person{"strven",38,addr}
+	fmt.Printf("姓名:%v  年龄:%v 省:%v 市:%v\n",p.name,p.age,p.Address.province,p.Address.city) //姓名:strven  年龄:38 省:北京 市:丰台区
+}
+```
