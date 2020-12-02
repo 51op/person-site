@@ -766,7 +766,7 @@ map初始化和遍历
 ```
 * 5.3.3 map是引用类型
 
-### Go常用内置包
+### 第6章  Go常用内置包
 
 [可参考官网](https://golang.org/pkg/)
 * 字符串遍历
@@ -777,7 +777,7 @@ str:="strings包：遍历带有中文的字符串"
 	}
 ```
 
-### Go面向对象
+### 第7 章Go面向对象
 
 #### 结构体
 
@@ -852,5 +852,112 @@ func TestMoudelStrings(t *testing.T)  {
 	//实例化Person结构体
 	p:=Person{"strven",38,addr}
 	fmt.Printf("姓名:%v  年龄:%v 省:%v 市:%v\n",p.name,p.age,p.Address.province,p.Address.city) //姓名:strven  年龄:38 省:北京 市:丰台区
+}
+```
+
+#### 方法
+
+* Go中同时有函数和方法，方法的本质是函数，但是与函数又不同
+1.含义不同，函数是一段具有独立功能的代码，可以被反复多次调用，而方法是一个类的行为功能，只有该类的对象才能调用
+2.方法有接受者而函数没有，Go语言的方法是一种作用域特定类型变量的函数，这种类型变量叫作接受者(receiver)，接受者的概念类似于传统面向对象中的this或self关键字
+3.方法可以重名(接受者不同)，而函数不能重名，
+```go
+type Per struct {
+	name string
+	age int
+}
+func ( p  Per ) getData()  {
+	fmt.Printf("名字：%v 年龄：%v",p.name,p.age) //名字：aaa 年龄：39
+}
+func TestMethod(t *testing.T)  {
+	p1:=Per{"aaa",39}
+	p1.getData()
+}
+```
+
+* 方法继承
+方法是可以继承的，如果匿名字段实现了一个方法，那么包含这个匿名字段的struct也能调用该匿名字段中的方法
+```go
+type Human struct {
+	name, phone string
+	age int
+}
+
+type Stu struct {
+	Human
+	school string
+}
+type Employee struct {
+	Human
+	company string
+}
+func TestMethod(t *testing.T)  {
+	s1:=Stu{Human{"dav","1850103930",7}," 洛阳一中"}
+	s1.SayHi()
+}
+func (h *Human) SayHi()  {
+	fmt.Printf("我是%s,%d岁，电话%s\n",h.name,h.age,h.phone)
+}
+```
+* 方法重写
+```go
+type Human struct {
+	name, phone string
+	age int
+}
+
+type Stu struct {
+	Human
+	school string
+}
+type Employee struct {
+	Human
+	company string
+}
+func TestMethod(t *testing.T)  {
+	s1:=Stu{Human{"dav","1850103930",7}, " 洛阳一中"}
+	s2:=Employee{Human{"dav","1850*****",17},"航天飞机"}
+	s1.SayHi()
+	
+	s2.SayHi()
+}
+func (h *Human) SayHi()  {
+	fmt.Printf("我是%s,%d岁，电话%s\n",h.name,h.age,h.phone)
+}
+func (h *Stu) SayHi()  {
+	fmt.Printf("我是%s,%d岁，电话%s,学校%s\n",h.name,h.age,h.phone,h.school)
+}
+func (h *Employee) SayHi()  {
+	fmt.Printf("我是%s,%d岁，电话%s,工作%s\n",h.name,h.age,h.phone,h.company)
+}
+```
+![](https://gitee.com/stto_32/img/raw/master/20201202151315.png)
+
+#### 接口
+
+
+* 接口定义与实现
+Go当中的接口和java中接口类似，接口中定义对象的行为。接口指定对象应该做什么，实现这种行为方式(实现细节)由对象来决定
+```go
+type implUser interface {
+	run()
+	call()
+}
+type Ameriacan struct {
+
+}
+func (a Ameriacan) run()  {
+	fmt.Printf("美国人跑了\n")
+}
+func (a Ameriacan) call()  {
+	fmt.Printf("美国人call()方法" +
+		"\n")
+}
+func TestOver(t *testing.T)  {
+
+	var user implUser
+	user=new(Ameriacan)
+	user.run()
+	user.call()
 }
 ```
