@@ -961,3 +961,51 @@ func TestOver(t *testing.T)  {
 	user.call()
 }
 ```
+
+* 接口对象转型(类型断言)
+类似于java中的向上转型和向下转型
+```go
+//接口对象转型（类型断言）
+type Compute interface {
+	perimeter() float64 //实现2个类型
+}
+type Rectangle struct {
+	a,b float64
+}
+type Triangle struct {
+	a,b,c float64
+}
+
+//定义2个类型的方法，
+func (r Rectangle)perimeter()  float64 {
+
+	return r.a*r.b
+}
+func (r Triangle)perimeter()  float64 {
+
+	return r.a*r.b*r.c
+}
+
+//接口断言
+func getType(c Compute)  {
+	if instance,ok:=c.(Rectangle);ok{
+		fmt.Printf("矩形长度:%0.2f,%0.2f\n",instance.a,instance.b)
+
+	} else if instance,ok:=c.(Triangle);ok {
+		   fmt.Printf("三角形形长度:%0.2f,%0.2f,%0.2f\n",instance.a,instance.b,instance.c)
+	}
+}
+//定义返回结果，
+func getResult(s Compute)  {
+
+	fmt.Printf("结果是%.2f \n",s.perimeter())
+}
+func main()  {
+
+	var c Compute
+	c = Rectangle{2.0,3.0}
+	getType(c)
+	getResult(c)
+}
+
+```
