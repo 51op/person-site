@@ -2,13 +2,9 @@
     <div class="detail-info">
         <div class="iconimg"><slot name="imgSlot"><img src="../assets/img/shouye.png"></slot></div>
         <div class="shouye">
-            <slot name="shouyeSlot">
-                <router-link to="/" tag="a">首页
-                <img src="../assets/img/jiantou.png"/>
-                </router-link>
-            </slot>
-
+            <slot name="shouyeSlot"><router-link to="/" tag="a">首页</router-link></slot>
         </div>
+        <div class="jiantou"><img src="../assets/img/jiantou.png"/></div>
         <div class="iconContent"><slot name="contentSlot"></slot></div>
     </div>
 </template>
@@ -25,22 +21,24 @@
         font-size: 14px;
         width: auto;
         margin: 20px 70px ;
-        line-height: 40px;
-        padding: 0 0 0 25px;
+        /*line-height: 40px;*/
         color: #606A75;
 
     }
+    .detail-info div{
+        padding: 0 0 0 8px;
+    }
     .shouye{
-        /*padding-right: 15px;*/
     }
     .shouye a {
         color: #606A75;
+        text-decoration: none;
     }
    .shouye img{
-       /*background: red;*/
+       /*margin-top: 5px;*/
    }
     .iconimg{
-        /*padding-right: 6px;*/
+        /*margin-top: 10px;*/
 
     }
     .iconContent{
