@@ -75,6 +75,7 @@
 ::v-deep .el-submenu__title, ::v-deep.el-menu-item a {
     text-decoration: none;
     color: white;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 
